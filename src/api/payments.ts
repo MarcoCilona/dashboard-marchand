@@ -7,7 +7,7 @@ export const PaymentsApi = {
   /**
    * Returning a single payment by a given id
    */
-  getPayment(id: number) {
+  getPayment(id: string): Promise<AxiosResponse> {
     return instance.get(`/${PAYMENTS_RESOURCE}/${id}`);
   },
   /**
