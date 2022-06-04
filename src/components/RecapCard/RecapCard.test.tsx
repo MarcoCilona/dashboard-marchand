@@ -17,7 +17,7 @@ describe('BaseCard tests', () => {
   });
 
   test('The component show the prop amount', () => {
-    const AMOUNT = 1000;
+    const AMOUNT = '1000';
     render(<RecapCard amount={AMOUNT} />);
     expect(screen.getByTestId('amount')).toHaveTextContent(`${AMOUNT}`);
   });
