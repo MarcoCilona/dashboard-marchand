@@ -8,7 +8,6 @@
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    width: 140px;
 }
 
 .RecapCard__amount {
@@ -31,5 +30,9 @@
 }
 
 .RecapCard__status-bar[data-status="ready"] {
-background-color: #00cf00;
+    background-color: #00cf00;
+}
+
+.RecapCard__status-bar[data-status="not started"] {
+    background-color: #cf9f00;
 }
