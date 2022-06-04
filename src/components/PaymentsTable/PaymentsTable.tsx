@@ -9,7 +9,12 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 // Utils
-import { currencyPrefix, formatNumber, formatWithoutSymbols } from '../../utils/helpers';
+import {
+  currencyPrefix,
+  formatNumber,
+  formatTimeStamp,
+  formatWithoutSymbols,
+} from '../../utils/helpers';
 
 type Props = {
   payments: Array<DashboardMarchand.Payment>;
@@ -52,7 +57,7 @@ const PaymentsTable = ({ payments }: Props) => {
                 {payment.id}
               </TableCell>
               <TableCell sx={{ color: '#c6c6c6' }} align='right'>
-                {payment.created}
+                {formatTimeStamp(payment.created)}
               </TableCell>
               <TableCell sx={{ color: '#c6c6c6' }} align='right'>
                 {currencyPrefix({ value: formatNumber(payment.amount) })}
