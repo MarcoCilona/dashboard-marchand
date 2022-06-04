@@ -1,6 +1,6 @@
 // src/api/index.spec.ts
 import { AxiosResponse } from 'axios';
-import { formatRecaps, retrievePayment, retrievePayments } from './payments';
+import { chartPaymentsLabels, formatRecaps, retrievePayment, retrievePayments } from './payments';
 import instance from '../api/index';
 import { formatNumber } from './helpers';
 
@@ -194,5 +194,35 @@ describe('Utils for payments api', () => {
 
     const notStartedAmount = recaps.find(({ status }) => status === 'not started');
     expect(notStartedAmount.amount).toBe(formatNumber(900));
+  });
+
+  test('chartPaymentsLabels - Returns the list of months given an array of payments', () => {
+    const payments = [
+      {
+        status: 'not_started',
+        id: 'payment_I4Hnhg',
+        created: 1648764000000,
+        customer_name: 'Victor Hugo',
+        merchant: {
+          name: 'Super Merchant',
+        },
+        amount: 400,
+        installmentsCount: 3,
+      },
+      {
+        status: 'ready',
+        id: 'payment_i2NJhL',
+        created: 1649023200000,
+        customer_name: 'Émile Zola',
+        merchant: {
+          name: 'Super Merchant',
+        },
+        amount: 356050,
+        installmentsCount: 10,
+      },
+    ];
+
+    const expectedResult = ['Mar', 'Apr'];
+    expect(chartPaymentsLabels(payments)).toEqual(expect.arrayContaining(expectedResult));
   });
 });

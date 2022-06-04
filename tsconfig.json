@@ -19,11 +19,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "typeRoots": ["./node_modules/@types", "./src/typings"]
+    "typeRoots": ["./node_modules/@types", "./typings"]
   },
   
   "include": [
     "/src/**/*",
-    "/src/typings/index.d.ts"
+    "/typings/index.d.ts"
   ]
 }

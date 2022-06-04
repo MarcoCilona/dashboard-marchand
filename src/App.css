@@ -7,3 +7,18 @@
   overflow-y: auto;
     max-height: 100vh;
 }
+
+.App__reportings {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  margin-top: 20px;
+}
+
+.App__reportings > div:first-child {
+  width: 60%;
+}
+
+.App__reportings > div:last-child {
+  width: 40%;
+}
