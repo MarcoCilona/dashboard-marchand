@@ -1,7 +1,8 @@
 // src/api/index.spec.ts
 import { AxiosResponse } from 'axios';
-import { retrievePayment, retrievePayments } from './payments';
+import { formatRecaps, retrievePayment, retrievePayments } from './payments';
 import instance from '../api/index';
+import { formatNumber } from './helpers';
 
 describe('Utils for payments api', () => {
   let mockPost: jest.SpyInstance;
@@ -122,5 +123,76 @@ describe('Utils for payments api', () => {
     const { status, statusText } = await retrievePayment('');
     expect(status).toEqual(500);
     expect(statusText).toEqual(errorText);
+  });
+
+  test('Retrieve payments reaps - Given an array of payments it returns an array of recaps', () => {
+    const payments = [
+      {
+        status: 'not_started',
+        id: 'payment_I4Hnhg',
+        created: 1648764000000,
+        customer_name: 'Victor Hugo',
+        merchant: {
+          name: 'Super Merchant',
+        },
+        amount: 400,
+        installmentsCount: 3,
+      },
+      {
+        status: 'not_started',
+        id: 'payment_I4Hnhg',
+        created: 1648764000000,
+        customer_name: 'Victor Hugo',
+        merchant: {
+          name: 'Super Merchant',
+        },
+        amount: 500,
+        installmentsCount: 3,
+      },
+      {
+        status: 'ready',
+        id: 'payment_I4Hnhg',
+        created: 1648764000000,
+        customer_name: 'Victor Hugo',
+        merchant: {
+          name: 'Super Merchant',
+        },
+        amount: 1000,
+        installmentsCount: 3,
+      },
+      {
+        status: 'ready',
+        id: 'payment_I4Hnhg',
+        created: 1648764000000,
+        customer_name: 'Victor Hugo',
+        merchant: {
+          name: 'Super Merchant',
+        },
+        amount: 200,
+        installmentsCount: 3,
+      },
+      {
+        status: 'ready',
+        id: 'payment_I4Hnhg',
+        created: 1648764000000,
+        customer_name: 'Victor Hugo',
+        merchant: {
+          name: 'Super Merchant',
+        },
+        amount: 500,
+        installmentsCount: 3,
+      },
+    ];
+
+    const recaps = formatRecaps(payments);
+
+    // Expecting to see an array of two recaps
+    expect(recaps.length).toBe(2);
+
+    const readyAmount = recaps.find(({ status }) => status === 'ready');
+    expect(readyAmount.amount).toBe(formatNumber(1700));
+
+    const notStartedAmount = recaps.find(({ status }) => status === 'not started');
+    expect(notStartedAmount.amount).toBe(formatNumber(900));
   });
 });
