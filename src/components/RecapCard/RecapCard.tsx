@@ -27,7 +27,7 @@ const RecapCard = ({ amount, status = '' }) => {
 };
 
 RecapCard.propTypes = {
-  amount: PropTypes.number,
+  amount: PropTypes.string,
   counter: PropTypes.number,
   status: PropTypes.string,
 };

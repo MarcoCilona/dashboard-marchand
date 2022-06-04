@@ -1,5 +1,9 @@
 .App {
   background-color: #282c34;
+  box-sizing: border-box;
   height: 100vh;
+  padding: 35px;
   text-align: center;
+  overflow-y: auto;
+    max-height: 100vh;
 }
