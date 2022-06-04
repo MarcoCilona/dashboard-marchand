@@ -1,0 +1,35 @@
+.RecapCard {
+    align-items: flex-start;
+    background-color: #fff;
+    border: 1px solid #464a52;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 140px;
+}
+
+.RecapCard__amount {
+    color: #191919;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.RecapCard__status {
+    color: #7d7d7d;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.RecapCard__status-bar {
+    height: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.RecapCard__status-bar[data-status="ready"] {
+background-color: #00cf00;
+}
