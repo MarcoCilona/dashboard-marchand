@@ -1,5 +1,5 @@
 import { PaymentsApi } from '../api';
-import { formatNumber, formatTimeStamp, formatWithoutSymbols } from './helpers';
+import { formatNumber, formatWithoutSymbols } from './helpers';
 
 export const retrievePayments = async () => {
   const paymentsResource = await PaymentsApi.getPayments();

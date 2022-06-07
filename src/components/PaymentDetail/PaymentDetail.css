@@ -1,0 +1,35 @@
+.PaymentDetail__basic-info {
+    column-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    margin-top: 20px;
+    row-gap: 10px;
+}
+
+.PaymentDetail__divider {
+    background-color: #c6c6c6;
+    height: 1px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.PaymentDetail__payment-plans {
+   display: table;
+   max-height: 500px;
+   overflow-y: auto;
+   width: 100%;
+}
+
+.PaymentDetail__payment-plan {
+    display: table-row;
+}
+
+.PaymentDetail__payment-plan > div {
+    display: table-cell;
+    border-spacing: 5px;
+}
+
+.PaymentDetail__payment-wrapper {
+    max-height: 250px;
+    overflow-y: auto;
+}
