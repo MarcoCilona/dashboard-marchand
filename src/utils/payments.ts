@@ -57,10 +57,12 @@ export const chartPaymentsLabels = (payments: Array<DashboardMarchand.Payment>):
   const labels: string[] = [];
 
   for (const date of timestamps) {
-    const dateString = new Date(date).toDateString();
-    const splittedDate = dateString.split(' ');
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    labels.push(splittedDate[1]);
+    const utcMonth = new Date(date).getUTCMonth();
+    const month = months[utcMonth];
+
+    labels.push(month);
   }
 
   return [...new Set(labels)];

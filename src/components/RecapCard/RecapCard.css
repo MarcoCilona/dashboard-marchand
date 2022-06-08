@@ -31,15 +31,15 @@
 }
 
 .RecapCard__status-bar[data-status="default"] {
-    background-color: #124ef3;
+    background-color: #6c62c2;
 }
 
 .RecapCard__status-bar[data-status="ready"] {
-    background-color: #00cf00;
+    background-color: #124ef3;
 }
 
 .RecapCard__status-bar[data-status="in progress"] {
-    background-color: #ffcd28;
+    background-color: #a15a00;
 }
 
 .RecapCard__status-bar[data-status="not started"] {
@@ -47,5 +47,5 @@
 }
 
 .RecapCard__status-bar[data-status="paid"] {
-    background-color: #017b01;
+    background-color: #00cf00;
 }

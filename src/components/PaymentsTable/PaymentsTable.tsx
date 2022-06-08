@@ -70,7 +70,7 @@ const PaymentsTable = ({ payments }: Props) => {
             {payments.map((payment, index) => (
               <TableRow
                 key={index}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                sx={{ cursor: 'pointer', '&:last-child td, &:last-child th': { border: 0 } }}
                 onClick={() => handleRowClick(payment)}
               >
                 <TableCell sx={{ color: '#c6c6c6' }} component='th' scope='row'>
