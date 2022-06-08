@@ -11,6 +11,8 @@ import {
 
 import Typography from '@mui/material/Typography';
 
+import { sortArray } from './utils/helpers';
+
 // Components
 import PaymentsChart from './components/PaymentsChart/PaymentsChart';
 import PaymentsTable from './components/PaymentsTable/PaymentsTable';
@@ -26,7 +28,7 @@ function App() {
   useEffect(() => {
     (async () => {
       const paymentsResouce = await retrievePayments();
-      updatePayments(paymentsResouce);
+      updatePayments(sortArray({ array: paymentsResouce, key: 'status' }));
       updateRecaps(formatRecaps(paymentsResouce));
       updateLabels(chartPaymentsLabels(paymentsResouce));
       updateAmountSeries(chartAmountSeries(paymentsResouce));

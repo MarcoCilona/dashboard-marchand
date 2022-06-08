@@ -29,3 +29,20 @@ export const formatTimeStamp = (timestamp: number): string => {
 
   return `${day}-${month}-${year}`;
 };
+
+// Function used to sort an array of object by a given attribute in ascending order
+export const sortArray = ({
+  array,
+  key,
+}: {
+  array: Array<unknown>;
+  key: string;
+}): Array<unknown> => {
+  const clonedArray = JSON.parse(JSON.stringify(array));
+
+  clonedArray.sort((a, b) => {
+    return a[key].localeCompare(b[key]);
+  });
+
+  return clonedArray;
+};
