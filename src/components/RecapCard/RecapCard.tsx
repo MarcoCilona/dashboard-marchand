@@ -21,7 +21,6 @@ const RecapCard = ({ amount, status = '' }) => {
       <div data-testid='amount' className='RecapCard__amount'>
         {currencyPrefix({ value: amount })}
       </div>
-      <div data-status={status} className='RecapCard__status-bar'></div>
     </div>
   );
 };
