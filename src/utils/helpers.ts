@@ -1,3 +1,8 @@
+/**
+ * Method that, given a string, returns that string with first letter capitalized
+ * @param value The string to be formatted
+ * @returns The formatted string with first letter capitalized
+ */
 export const capitalizeFirstLetter = (value: string): string => {
   const firstChar = value.charAt(0);
   const stringWithoutFirstChar = value.substring(1);
