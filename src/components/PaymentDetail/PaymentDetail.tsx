@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { retrievePayment } from '../../utils/payments';
@@ -39,7 +38,13 @@ const PaymentDetail = ({ onClose, paymentId, open }: Props) => {
 
   if (payment)
     return (
-      <Dialog fullWidth={true} maxWidth={'md'} open={open} onClose={() => onClose(false)}>
+      <Dialog
+        data-testid='payment-detail'
+        fullWidth={true}
+        maxWidth={'md'}
+        open={open}
+        onClose={() => onClose(false)}
+      >
         <DialogContent sx={{ backgroundColor: '#40444c', color: '#fff' }}>
           <DialogTitle sx={{ padding: 0 }}>Payment details</DialogTitle>
           <div className='PaymentDetail__basic-info'>
@@ -88,7 +93,7 @@ const PaymentDetail = ({ onClose, paymentId, open }: Props) => {
       </Dialog>
     );
 
-  return '';
+  return null;
 };
 
 export default PaymentDetail;

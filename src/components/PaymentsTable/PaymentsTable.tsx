@@ -69,6 +69,7 @@ const PaymentsTable = ({ payments }: Props) => {
           <TableBody>
             {payments.map((payment, index) => (
               <TableRow
+                data-testid='table-row'
                 key={index}
                 sx={{ cursor: 'pointer', '&:last-child td, &:last-child th': { border: 0 } }}
                 onClick={() => handleRowClick(payment)}
