@@ -18,7 +18,11 @@ import PaymentsChart from './components/PaymentsChart/PaymentsChart';
 import PaymentsTable from './components/PaymentsTable/PaymentsTable';
 import RecapCardList from './components/RecapCardList/RecapCardList';
 
+import { useTranslation } from 'react-i18next';
+
 function App() {
+  const { t } = useTranslation();
+
   const [amountSeries, updateAmountSeries] = useState([]);
   const [installmentsSeries, updateInstallmentsSeries] = useState([]);
   const [labels, updateLabels] = useState([]);
@@ -39,7 +43,7 @@ function App() {
   return (
     <div className='App'>
       <Typography align='left' sx={{ color: '#fff' }} variant='h5' gutterBottom>
-        Payments recaps
+        {t('PAYMENTS_RECAPS')}
       </Typography>
       <div className='App__reportings'>
         <PaymentsChart
@@ -50,7 +54,7 @@ function App() {
         <RecapCardList recaps={recaps} />
       </div>
       <Typography align='left' sx={{ color: '#fff', marginTop: '20px' }} variant='h5' gutterBottom>
-        Payments list
+        {t('PAYMENTS_LIST')}
       </Typography>
       <PaymentsTable payments={payments} />
     </div>

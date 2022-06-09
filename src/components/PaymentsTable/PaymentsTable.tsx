@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 
 // Utils
 import {
+  capitalizeFirstLetter,
   currencyPrefix,
   formatNumber,
   formatTimeStamp,
@@ -22,11 +23,15 @@ import PaymentDetail from '../PaymentDetail/PaymentDetail';
 // Hooks
 import usePaymentDetail from '../PaymentDetail/PaymentDetailHook';
 
+import { useTranslation } from 'react-i18next';
+
 type Props = {
   payments: Array<DashboardMarchand.Payment>;
 };
 
 const PaymentsTable = ({ payments }: Props) => {
+  const { t } = useTranslation();
+
   const [selectedPaymentId, updateSelectedPaymentId] = useState<string>();
   const [isOpen, setIsOpen] = usePaymentDetail(false);
 
@@ -47,22 +52,22 @@ const PaymentsTable = ({ payments }: Props) => {
             <TableRow>
               <TableCell sx={{ color: '#fff' }}>ID</TableCell>
               <TableCell sx={{ color: '#fff' }} align='right'>
-                Creation date
+                {capitalizeFirstLetter(t('CREATION'))}
               </TableCell>
               <TableCell sx={{ color: '#fff' }} align='right'>
-                Amount
+                {capitalizeFirstLetter(t('AMOUNT'))}
               </TableCell>
               <TableCell sx={{ color: '#fff' }} align='right'>
-                Installments
+                {capitalizeFirstLetter(t('INSTALLMENTS'))}
               </TableCell>
               <TableCell sx={{ color: '#fff' }} align='right'>
-                Customer
+                {capitalizeFirstLetter(t('CUSTOMER'))}
               </TableCell>
               <TableCell sx={{ color: '#fff' }} align='right'>
-                Merchant
+                {capitalizeFirstLetter(t('MERCHANT'))}
               </TableCell>
               <TableCell sx={{ color: '#fff' }} align='right'>
-                Status
+                {capitalizeFirstLetter(t('STATUS'))}
               </TableCell>
             </TableRow>
           </TableHead>
