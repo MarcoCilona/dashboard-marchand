@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import PaymentsTable from './PaymentsTable';
 
 const testPayments = [
@@ -42,7 +42,7 @@ describe('Suite test for PaymentsTable', () => {
 
     fireEvent.click(firstRow);
 
-    const paymentDetailElement = await screen.findByTestId('payment-detail');
+    const paymentDetailElement = await waitFor(() => screen.findByTestId('payment-detail'));
 
     expect(paymentDetailElement).toBeInTheDocument();
   });

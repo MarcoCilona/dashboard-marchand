@@ -36,13 +36,7 @@ export const formatTimeStamp = (timestamp: number): string => {
 };
 
 // Function used to sort an array of object by a given attribute in ascending order
-export const sortArray = ({
-  array,
-  key,
-}: {
-  array: Array<unknown>;
-  key: string;
-}): Array<unknown> => {
+export const sortArray = <T>({ array, key }: { array: Array<T>; key: string }): Array<T> => {
   const clonedArray = JSON.parse(JSON.stringify(array));
 
   clonedArray.sort((a, b) => {
@@ -50,4 +44,15 @@ export const sortArray = ({
   });
 
   return clonedArray;
+};
+
+/**
+ * Given an array, returns that array without duplicated values
+ * @param array - The array in which we want unique values
+ * @returns
+ */
+export const removeDuplicates = <T>(array: Array<T>): Array<T> => {
+  const clonedArray = JSON.parse(JSON.stringify(array));
+
+  return clonedArray.filter((item, pos) => clonedArray.indexOf(item) === pos);
 };

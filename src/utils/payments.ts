@@ -1,5 +1,5 @@
 import { PaymentsApi } from '../api';
-import { formatNumber, formatWithoutSymbols } from './helpers';
+import { formatNumber, formatWithoutSymbols, removeDuplicates } from './helpers';
 
 /**
  * Utils used to call the api for getting payments and handling its response
@@ -36,7 +36,7 @@ export const formatRecaps = (
   payments: Array<DashboardMarchand.Payment>,
 ): Array<DashboardMarchand.Recap> => {
   const recaps: DashboardMarchand.Recap[] = [];
-  const availableStatuses = [...new Set(payments.map(({ status }) => status))];
+  const availableStatuses: string[] = removeDuplicates(payments.map(({ status }) => status));
 
   for (const _status of availableStatuses) {
     const filteredPaymentsByStatus = payments.filter(({ status }) => status === _status);
@@ -71,7 +71,7 @@ export const chartPaymentsLabels = (payments: Array<DashboardMarchand.Payment>):
     labels.push(month);
   }
 
-  return [...new Set(labels)];
+  return removeDuplicates(labels) as string[];
 };
 
 /**
@@ -112,7 +112,7 @@ const formatPaymentsCreated = (
 const extractReport = (payments: Array<DashboardMarchand.Payment>, param: string): number[] => {
   const formattedPaymentsByMonth = formatPaymentsCreated(payments);
 
-  const months = [...new Set(formattedPaymentsByMonth.map(({ created }) => created))];
+  const months = removeDuplicates(formattedPaymentsByMonth.map(({ created }) => created));
 
   const series: number[] = [];
 
