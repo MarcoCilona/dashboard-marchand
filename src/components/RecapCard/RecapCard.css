@@ -1,51 +1,51 @@
 .RecapCard {
-    align-items: flex-start;
-    background-color: #40444c;
-    border: 1px solid #464a52;
-    border-radius: 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    justify-content: center;
-    padding: 20px;
+  align-items: flex-start;
+  background-color: #40444c;
+  border: 1px solid #464a52;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  justify-content: center;
+  padding: 20px;
 }
 
 .RecapCard__amount {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 15px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 15px;
 }
 
 .RecapCard__status {
-    color: #c6c6c6;
-    font-size: 14px;
-    font-weight: 500;
+  color: #c6c6c6;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .RecapCard__status-bar {
-    height: 5px;
-    margin-top: 10px;
-    width: 100%;
+  height: 5px;
+  margin-top: 10px;
+  width: 100%;
 }
 
-.RecapCard__status-bar[data-status="default"] {
-    background-color: #6c62c2;
+.RecapCard__status-bar[data-status='default'] {
+  background-color: #6c62c2;
 }
 
-.RecapCard__status-bar[data-status="ready"] {
-    background-color: #124ef3;
+.RecapCard__status-bar[data-status='ready'] {
+  background-color: #124ef3;
 }
 
-.RecapCard__status-bar[data-status="in progress"] {
-    background-color: #a15a00;
+.RecapCard__status-bar[data-status='in progress'] {
+  background-color: #a15a00;
 }
 
-.RecapCard__status-bar[data-status="not started"] {
-    background-color: #cf9f00;
+.RecapCard__status-bar[data-status='not started'] {
+  background-color: #cf9f00;
 }
 
-.RecapCard__status-bar[data-status="paid"] {
-    background-color: #00cf00;
+.RecapCard__status-bar[data-status='paid'] {
+  background-color: #00cf00;
 }

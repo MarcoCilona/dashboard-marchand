@@ -89,10 +89,6 @@ const PaymentDetail = ({ onClose, paymentId, open }: Props) => {
               })}
             </div>
           </div>
-          {/*
-    
-    
-    */}
         </DialogContent>
       </Dialog>
     );

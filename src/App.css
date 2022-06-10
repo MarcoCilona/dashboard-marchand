@@ -31,11 +31,11 @@
   .App__reportings {
     flex-direction: column;
   }
-  
+
   .App__reportings > div:first-child {
     width: 100%;
   }
-  
+
   .App__reportings > div:last-child {
     width: 100%;
   }
