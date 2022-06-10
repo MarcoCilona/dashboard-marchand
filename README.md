@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Steps to run the project
+* open terminal tab
+* cd into dashboard-marchand/
+* npm install
+* npm run start
+
 ## Available Scripts
 
 In the project directory, you can run:
