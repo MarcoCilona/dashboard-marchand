@@ -35,6 +35,11 @@ const PaymentsTable = ({ payments }: Props) => {
   const [selectedPaymentId, updateSelectedPaymentId] = useState<string>();
   const [isOpen, setIsOpen] = usePaymentDetail(false);
 
+  /**
+   * Callback for table row click. When a payment from the table is clicked the detail modal gets opened and the PaymentsTable's state gets updated
+   * to store the clicked payment id
+   * @param payment - The payment clicked
+   */
   const handleRowClick = (payment: DashboardMarchand.Payment) => {
     setIsOpen(true);
     updateSelectedPaymentId(payment.id);

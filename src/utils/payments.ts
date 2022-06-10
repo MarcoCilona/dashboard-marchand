@@ -1,6 +1,9 @@
 import { PaymentsApi } from '../api';
 import { formatNumber, formatWithoutSymbols } from './helpers';
 
+/**
+ * Utils used to call the api for getting payments and handling its response
+ */
 export const retrievePayments = async () => {
   const paymentsResource = await PaymentsApi.getPayments();
 
@@ -11,6 +14,9 @@ export const retrievePayments = async () => {
   return { status, statusText };
 };
 
+/**
+ * Utils that, given an id, calls the api to get that payment info and handles its response
+ */
 export const retrievePayment = async (id: string) => {
   const paymentResource = await PaymentsApi.getPayment(id);
 
