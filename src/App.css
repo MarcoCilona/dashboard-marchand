@@ -2,10 +2,10 @@
   background-color: #282c34;
   box-sizing: border-box;
   height: 100vh;
+  max-height: 100vh;
   padding: 35px;
   text-align: center;
   overflow-y: auto;
-    max-height: 100vh;
 }
 
 .App__reportings {
@@ -21,4 +21,22 @@
 
 .App__reportings > div:last-child {
   width: 40%;
+}
+
+@media only screen and (max-width: 768px) {
+  .App {
+    padding: 15px;
+  }
+
+  .App__reportings {
+    flex-direction: column;
+  }
+  
+  .App__reportings > div:first-child {
+    width: 100%;
+  }
+  
+  .App__reportings > div:last-child {
+    width: 100%;
+  }
 }
