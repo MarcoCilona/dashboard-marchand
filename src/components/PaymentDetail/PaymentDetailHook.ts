@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { SetStateAction } from 'react';
 
-const usePaymentDetail = (value: boolean): [boolean, (event: any) => void] => {
+const usePaymentDetail = (value: boolean): [boolean, (event: SetStateAction<boolean>) => void] => {
   const [isOpen, setIsOpen] = React.useState(value);
 
   return [
