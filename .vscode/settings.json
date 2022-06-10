@@ -16,6 +16,10 @@
     },
     "files.associations": {
       "*.svg": "html"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
     }
 }
     
