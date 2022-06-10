@@ -52,10 +52,14 @@ const PaymentDetail = ({ onClose, paymentId, open }: Props) => {
         <DialogContent sx={{ backgroundColor: '#40444c', color: '#fff' }}>
           <DialogTitle sx={{ padding: 0 }}>{t('PAYMENTS_DETAILS')}</DialogTitle>
           <div className='PaymentDetail__basic-info'>
-            <PaymentDetailInfo label={t('ID')} value={payment.id} />
+            <PaymentDetailInfo dataTestid='payment-id' label={t('ID')} value={payment.id} />
             <PaymentDetailInfo label={t('CREATION')} value={formatTimeStamp(payment.created)} />
             <PaymentDetailInfo label={t('MERCHANT')} value={payment.merchant.name} />
-            <PaymentDetailInfo label={t('CUSTOMER')} value={payment.customer_name} />
+            <PaymentDetailInfo
+              dataTestid='payment-customer'
+              label={t('CUSTOMER')}
+              value={payment.customer_name}
+            />
             <PaymentDetailInfo label={t('STATUS')} value={formatWithoutSymbols(payment.status)} />
             <PaymentDetailInfo
               label={t('AMOUNT')}

@@ -1,3 +1,4 @@
+import { string } from 'prop-types';
 import React from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
@@ -5,13 +6,14 @@ import { capitalizeFirstLetter } from '../../utils/helpers';
 import './PaymentDetailInfo.css';
 
 type Props = {
+  dataTestid?: string;
   label: string;
   value: string | number;
 };
 
-const PaymentDetailInfo = ({ label, value }: Props) => {
+const PaymentDetailInfo = ({ dataTestid, label, value }: Props) => {
   return (
-    <div>
+    <div data-testid={dataTestid}>
       <p className='PaymentDetailInfo__label'>{capitalizeFirstLetter(label)}</p>
       <p className='PaymentDetailInfo__value'>{value}</p>
     </div>
